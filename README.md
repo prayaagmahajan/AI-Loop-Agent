@@ -84,24 +84,3 @@ Read [the architecture note](docs/ARCHITECTURE.md) for boundaries, scale to 10,0
 Chinook is downloaded from [release v1.4.5](https://github.com/lerocha/chinook-database/releases/tag/v1.4.5) and verified against `data/manifest.json`; upstream data is MIT-licensed. The downloaded database is not committed. Operational trial runs are retained under `diagnostics/` (deprecated endpoint, rate limiting, an incorrect prompt the model resisted, and a malformed response before the final prompt fix). No benchmark scores or synthetic responses are presented as live runs. Tests use explicitly identified offline doubles.
 
 This is a local/CI reference system, not a production SQL security boundary or a statistically validated benchmark. Static reports and final aggregation are memory-linear; persistent cross-run history, resume, shared rate limiting and independent expert labels remain future work. GitHub publishing and hosted workflow execution require a repository and account access.
-
------
-cd /Users/prayaagmahajan/PycharmProjects/AI-Loop-Agent
-export NVIDIA_API_KEY='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'
-export PYTHONPATH=src
-.venv/bin/python -m eval_loop run --config configs/nemotron-v3.json --id local-live
-.venv/bin/python -m eval_loop compare --baseline runs/baseline-promoted --candidate runs/local-live
-.venv/bin/python -m eval_loop report
-
-export PYTHONPATH=src
-
-export NVIDIA_API_KEY=''
-
-# verify database
-python -m eval_loop fetch-data --require-pin
-python -m unittest discover -s test -v
-
-RUN_ID = "fresh-123"
-
-.venv/bin/python -m eval_loop run --config configs/nemotron-v3.json --id local-live
-.venv/bin/python -m eval_loop compare --baseline runs/baseline-promoted --candidate runs/local-live
