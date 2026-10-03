@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chinook-eval-loop"
+version = "0.1.0"
+description = "A continuous, gated evaluation loop for a Nemotron SQL agent"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+eval-loop = "eval_loop.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

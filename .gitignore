@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.idea/
+.env
+.env.*
+!.env.example
+data/chinook.sqlite
+runs/index.sqlite*
+*.egg-info/
+build/
+dist/
+.DS_Store

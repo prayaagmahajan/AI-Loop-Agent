@@ -1,0 +1,25 @@
+{
+  "baseline": "baseline-promoted",
+  "candidate": "local-20261001-220819",
+  "passed": false,
+  "reasons": [
+    "Agent p95 exceeds baseline ratio"
+  ],
+  "regressions": [],
+  "improvements": [],
+  "missing": [],
+  "added": [],
+  "pass_rate_delta": 0.0,
+  "thresholds": {
+    "min_pass_rate": 0.9,
+    "max_pass_rate_drop": 0,
+    "max_case_regressions": 0,
+    "min_refusal_pass_rate": 1,
+    "min_judge_label_agreement": 0.85,
+    "max_agent_p95_seconds": 60,
+    "max_latency_ratio": 2,
+    "max_total_tokens_ratio": 1.75,
+    "rationale": "With 15 cases, block any paired quality regression, require both refusals, >=90% absolute accuracy and >=85% agreement on 8 authored judge labels. For latency, block p95 above 60s or above max(10s, 2x baseline). The 10s floor prevents a single hosted-service outlier dominating p95 of a tiny sample; identical-config live runs measured 3.14s and 7.53s p95. Token ceiling remains 1.75x baseline.",
+    "min_latency_ratio_ceiling_seconds": 10
+  }
+}

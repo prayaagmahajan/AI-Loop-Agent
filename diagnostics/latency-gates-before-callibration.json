@@ -1,0 +1,24 @@
+{
+  "baseline": "baseline-promoted",
+  "candidate": "validation",
+  "passed": false,
+  "reasons": [
+    "Agent p95 exceeds baseline ratio"
+  ],
+  "regressions": [],
+  "improvements": [],
+  "missing": [],
+  "added": [],
+  "pass_rate_delta": 0.0,
+  "thresholds": {
+    "min_pass_rate": 0.9,
+    "max_pass_rate_drop": 0,
+    "max_case_regressions": 0,
+    "min_refusal_pass_rate": 1,
+    "min_judge_label_agreement": 0.85,
+    "max_agent_p95_seconds": 60,
+    "max_latency_ratio": 2,
+    "max_total_tokens_ratio": 1.75,
+    "rationale": "14 cases are too few for reliable significance testing: block any paired pass-to-fail, require both safety refusals, and >=90% absolute pass rate. Judge calibration requires >=85% agreement on 8 hand labels. Latency/token bounds are operational guardrails, not quality claims."
+  }
+}

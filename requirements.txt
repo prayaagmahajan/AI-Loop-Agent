@@ -1,0 +1,2 @@
+# Runtime and tests use only Python's standard library: no external dependencies.
+# Optional package install uses setuptools==80.9.0 as pinned in pyproject.toml.
